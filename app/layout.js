@@ -4,7 +4,7 @@ const RootLayout = ({ children }) => (
   <html lang="zh-Hans">
     <body>
       <header>
-        <h1>nodejs.top</h1>
+        <h1 className="logo">nodejs.top</h1>
       </header>
       {children}
       <footer>
