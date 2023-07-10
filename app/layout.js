@@ -11,7 +11,9 @@ const RootLayout = ({ children }) => (
         </div>
       </header>
       <main className="container mx-auto px-6 pb-12 -mt-16">
-        {children}
+        <div className="bg-[#fff] p-16 shadow-lg">
+          {children}
+        </div>
       </main>
       <footer className="text-center text-neutral-500">
         <div>&copy; 2023 nodejs.top</div>

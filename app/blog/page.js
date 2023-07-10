@@ -1,7 +1,9 @@
+import PageTitle from '../components/page-title'
+
 const Blog = () => (
-  <div className="bg-[#fff] p-16 shadow-lg">
-    Blog Page
-  </div>
+  <>
+    <PageTitle>Blog List</PageTitle>
+  </>
 )
 
 export default Blog

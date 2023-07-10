@@ -1,7 +1,9 @@
+import PageTitle from '../components/page-title'
+
 const About = () => (
-  <div className="bg-[#fff] p-16 shadow-lg">
-    About Page
-  </div>
+  <>
+    <PageTitle>About Me</PageTitle>
+  </>
 )
 
 export default About

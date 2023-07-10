@@ -1,7 +1,9 @@
+import PageTitle from './components/page-title'
+
 const Home = () => (
-  <div className="bg-[#fff] p-16 shadow-lg">
-    Home Page
-  </div>
+  <>
+    <PageTitle>Home Page</PageTitle>
+  </>
 )
 
 export default Home
