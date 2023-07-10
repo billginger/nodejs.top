@@ -1,7 +1,7 @@
-const Home = () => (
+const Blog = () => (
   <div className="bg-[#fff] p-16 shadow-lg">
-    Home Page
+    Blog Page
   </div>
 )
 
-export default Home
+export default Blog
