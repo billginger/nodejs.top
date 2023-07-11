@@ -7,12 +7,59 @@
   src: url('/fonts/MarcellusSC-Regular.ttf') format('truetype');
 }
 
+:root {
+  /* 主题颜色：黛蓝 */
+  --theme-color: #31475c;
+}
+
 body {
   color: #333;
   background: #f8f8f8;
-  font-family: Georgia, '-apple-system', 'BlinkMacSystemFont', 'Hiragino Sans GB', Arial, 'Microsoft Yahei';
+  font-family: Georgia, 'PingFangSC-Light', 'STXihei', 'Hiragino Sans GB', Arial, 'Microsoft Yahei';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 p {
   margin-bottom: 16px;
+}
+
+.blog-summary::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  width: 40px;
+  height: 1px;
+  margin-left: -20px;
+  border-top: 1px solid #ddd;
+}
+
+.blog-summary:last-child::after {
+  display: none;
+}
+
+.blog-summary>.hidden::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 104px;
+  width: 1px;
+  height: 100%;
+  border-right: 1px solid #ddd;
+}
+
+.blog-summary:last-child>.hidden::before {
+  display: none;
+}
+
+.blog-summary>.hidden::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 100px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--theme-color);
 }

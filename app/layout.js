@@ -4,7 +4,7 @@ import './globals.css'
 const RootLayout = ({ children }) => (
   <html lang="zh-Hans">
     <body>
-      <header className="bg-[#31475c] text-white font-[MarcellusSC]">
+      <header className="bg-[--theme-color] text-white font-[MarcellusSC]">
         <div className="container mx-auto flex justify-between px-8 pt-8 pb-24">
           <div className="text-4xl">Nodejs.top</div>
           <Nav />
@@ -17,7 +17,7 @@ const RootLayout = ({ children }) => (
       </main>
       <footer className="text-center text-neutral-500">
         <div>&copy; 2023 nodejs.top</div>
-        <div className="text-sm pt-2 pb-4">
+        <div className="text-sm pt-2 pb-8">
           <a href="https://beian.miit.gov.cn/" target="_blank">鲁ICP备19003000号</a>
         </div>
       </footer>
