@@ -20,12 +20,12 @@ const NavCategory = () => {
   const total = navLinks.reduce((total, obj) => (total + obj.amount), 0)
   return (
     <nav className="nav-category">
-      <div className="pl-6 pb-2">
+      <div>
         <Link className={!category ? classActive : classNormal} href='/blog'>全部</Link>
         <span className="text-neutral-400"> ({total})</span>
       </div>
       {navLinks.map(link => (
-        <div className="pl-6 pb-2" key={link.name}>
+        <div key={link.name}>
           <Link className={link.name == category ? classActive : classNormal} href={`/blog?category=${link.name}`}>
             <Category>{link.name}</Category>
           </Link>

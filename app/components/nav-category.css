@@ -1,5 +1,6 @@
 .nav-category>div {
   position: relative;
+  padding: 0 0 8px 24px;
 }
 
 .nav-category>div::before {
