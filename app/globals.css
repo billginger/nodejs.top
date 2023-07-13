@@ -8,7 +8,7 @@
 }
 
 :root {
-  /* 主题颜色：黛蓝 */
+  /* 主题色：黛蓝 */
   --theme-color: #31475c;
 }
 
@@ -24,11 +24,12 @@ p {
   margin-bottom: 16px;
 }
 
+.page-title::after,
 .blog-summary::after {
   content: '';
   position: absolute;
   left: 50%;
-  bottom: 28px;
+  bottom: 30px;
   width: 40px;
   height: 1px;
   margin-left: -20px;
@@ -37,29 +38,4 @@ p {
 
 .blog-summary:last-child::after {
   display: none;
-}
-
-.blog-summary>.hidden::before {
-  content: '';
-  position: absolute;
-  top: 20px;
-  left: 104px;
-  width: 1px;
-  height: 100%;
-  border-right: 1px solid #ddd;
-}
-
-.blog-summary:last-child>.hidden::before {
-  display: none;
-}
-
-.blog-summary>.hidden::after {
-  content: '';
-  position: absolute;
-  top: 20px;
-  left: 100px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--theme-color);
 }
