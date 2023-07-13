@@ -22,7 +22,7 @@ const Category = ({ children }) => {
   }
   colorBlock += ' w-8 h-2.5 absolute -right-0.5 bottom-0'
   return (
-    <span className="inline-block relative">
+    <span className="relative">
       <div className={colorBlock} />
       <span className="relative">{children}</span>
     </span>
