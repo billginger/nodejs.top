@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import getPosts from '../lib/posts'
+import getPosts from '/lib/posts'
 import PageTitle from './components/page-title'
 import Category from './components/category'
 import './page.css'
@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <>
       <PageTitle>Home Page</PageTitle>
-      {posts.map(({ date, slug, dateDay, dateMonth, title, category, dateFull, summary, wordsLeft }, index) => (
+      {posts.map(({ date, slug, dateDay, dateMonth, title, category, summary, wordsLeft }, index) => (
         <div className="blog-summary relative pb-14 sm:pl-36" key={slug}>
           <div className="absolute -top-2 left-0 w-20 h-full text-center hidden sm:block">
             {index > 0 && posts[index - 1].date == date ? '' : (
@@ -24,7 +24,7 @@ const Home = () => {
             <Link className="hover:text-[--theme-color]" href={`/blog/${date}/${slug}`}>{title}</Link>
           </h2>
           <div className="text-sm text-neutral-500 mt-2 mb-4">
-            <Category>{category}</Category> / {dateFull}
+            <Category>{category}</Category> / {date}
           </div>
           <div className="text-neutral-600">
             <p>{summary}</p>
