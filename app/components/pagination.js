@@ -15,8 +15,7 @@ const Pagination = () => {
   return (
     <div className="pt-10 pb-6 text-center border-t border-neutral-200">
       <Link className={classActive} href={`${href}1`}>1</Link>
-      <Link className={classNormal} href={`${href}2`}>2</Link>
-      <Link className={classNormal} href={`${href}3`}>3</Link>
+      {/* <Link className={classNormal} href={`${href}2`}>2</Link> */}
     </div>
   )
 }

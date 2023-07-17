@@ -5,26 +5,19 @@ import Link from 'next/link'
 import Category from './category'
 import './nav-category.css'
 
-// TODO: Get navLinks from props
-const navLinks = [
-  { name: '随笔', amount: 1 },
-  { name: '软件', amount: 2 },
-  { name: '编程', amount: 3 },
-]
-
-const NavCategory = () => {
+const NavCategory = ({ categories }) => {
   const searchParams = useSearchParams()
   const category = searchParams.get('category')
   const classActive = 'font-semibold'
   const classNormal = 'hover:font-semibold hover:text-[--theme-color]'
-  const total = navLinks.reduce((total, obj) => (total + obj.amount), 0)
+  const total = categories.reduce((total, obj) => (total + obj.amount), 0)
   return (
     <nav className="nav-category">
       <div>
         <Link className={!category ? classActive : classNormal} href='/blog'>全部</Link>
         <span className="text-neutral-400"> ({total})</span>
       </div>
-      {navLinks.map(link => (
+      {categories.map(link => (
         <div key={link.name}>
           <Link className={link.name == category ? classActive : classNormal} href={`/blog?category=${link.name}`}>
             <Category>{link.name}</Category>
