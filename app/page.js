@@ -1,95 +1,39 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Link from 'next/link'
+import getPosts from '/lib/posts'
+import PageTitle from './components/page-title'
+import Category from './components/category'
+import './page.css'
 
-export default function Home() {
+const Home = () => {
+  // TODO: 只读取最新的 10 篇，点击“Load More”按钮加载更多
+  const { posts } = getPosts()
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <PageTitle>Home Page</PageTitle>
+      {posts.map(({ date, slug, dateDay, dateMonth, title, category, summary, wordsLeft }, index) => (
+        <div className="blog-summary relative pb-14 sm:pl-36" key={slug}>
+          <div className="absolute -top-2 left-0 w-20 h-full text-center hidden sm:block">
+            {index > 0 && posts[index - 1].date == date ? '' : (
+              <>
+                <div className="text-6xl text-[--theme-color]">{dateDay}</div>
+                <div className="mt-1 font-[MarcellusSC]">{dateMonth}</div>
+              </>
+            )}
+          </div>
+          <h2 className="text-2xl font-[MarcellusSC]">
+            <Link className="hover:text-[--theme-color]" href={`/blog/${date}/${slug}`}>{title}</Link>
+          </h2>
+          <div className="text-sm text-neutral-500 mt-2 mb-4">
+            <Category>{category}</Category> / {date}
+          </div>
+          <div className="text-neutral-600">
+            <p>{summary}</p>
+          </div>
+          <div className="text-sm text-neutral-400">&lt;还有{wordsLeft}字&gt;</div>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      ))}
+    </>
   )
 }
+
+export default Home

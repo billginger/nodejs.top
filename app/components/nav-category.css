@@ -1,0 +1,14 @@
+.nav-category>div {
+  position: relative;
+  padding: 0 0 8px 24px;
+}
+
+.nav-category>div::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  width: 4px;
+  height: 4px;
+  background: var(--theme-color);
+}
