@@ -6,7 +6,7 @@ import './page.css'
 
 const Home = () => {
   // TODO: 只读取最新的 10 篇，点击“Load More”按钮加载更多
-  const posts = getPosts()
+  const { posts } = getPosts()
   return (
     <>
       <PageTitle>Home Page</PageTitle>

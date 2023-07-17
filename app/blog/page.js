@@ -7,7 +7,7 @@ import Pagination from '../components/pagination'
 
 const Blog = () => {
   // TODO: 分页功能，每页10篇
-  const posts = getPosts()
+  const { posts } = getPosts()
   return (
     <>
       <PageTitle>Blog List</PageTitle>
