@@ -1,4 +1,5 @@
 import Nav from './components/nav'
+import LinkGithub from './components/link-github'
 import './globals.css'
 
 const RootLayout = ({ children }) => (
@@ -7,7 +8,10 @@ const RootLayout = ({ children }) => (
       <header className="bg-[--theme-color] text-white font-[MarcellusSC]">
         <div className="container mx-auto flex justify-between pt-8 pb-24 px-4 flex-col sm:px-8 sm:flex-row">
           <div className="text-center text-3xl pb-6 sm:text-4xl sm:pb-0">Nodejs.top</div>
-          <Nav />
+          <div className="flex items-center justify-between sm:justify-start">
+            <Nav />
+            <LinkGithub />
+          </div>
         </div>
       </header>
       <main className="container mx-auto pb-12 -mt-16 px-0 sm:px-6">
