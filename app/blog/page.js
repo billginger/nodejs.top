@@ -18,12 +18,12 @@ const Blog = () => {
         </div>
         <div className="grow">
           <div className="pb-4 font-[MarcellusSC]">全部</div>
-          {posts.map(({ date, slug, title, category }) => (
-            <div className="py-3 flex justify-between border-t border-neutral-200" key={slug}>
+          {posts.map(({ id, date, name, title, category }) => (
+            <div className="py-3 flex justify-between border-t border-neutral-200" key={id}>
               <div>
                 <Category>{category}</Category>
                 <h2 className="inline-block relative top-px left-3 text-lg font-[MarcellusSC]">
-                  <Link className="hover:text-[--theme-color]" href={`/blog/${date}/${slug}`}>{title}</Link>
+                  <Link className="hover:text-[--theme-color]" href={`/blog/${date}/${name}`}>{title}</Link>
                 </h2>
               </div>
               <div className="text-sm leading-6 text-neutral-500">{date}</div>

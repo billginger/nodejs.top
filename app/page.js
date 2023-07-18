@@ -10,8 +10,8 @@ const Home = () => {
   return (
     <>
       <PageTitle>Home Page</PageTitle>
-      {posts.map(({ date, slug, dateDay, dateMonth, title, category, summary, wordsLeft }, index) => (
-        <div className="blog-summary relative pb-14 sm:pl-36" key={slug}>
+      {posts.map(({ id, date, name, dateDay, dateMonth, title, category, summary, wordsLeft }, index) => (
+        <div className="blog-summary relative pb-14 sm:pl-36" key={id}>
           <div className="absolute -top-2 left-0 w-20 h-full text-center hidden sm:block">
             {index > 0 && posts[index - 1].date == date ? '' : (
               <>
@@ -21,7 +21,7 @@ const Home = () => {
             )}
           </div>
           <h2 className="text-2xl font-[MarcellusSC]">
-            <Link className="hover:text-[--theme-color]" href={`/blog/${date}/${slug}`}>{title}</Link>
+            <Link className="hover:text-[--theme-color]" href={`/blog/${date}/${name}`}>{title}</Link>
           </h2>
           <div className="text-sm text-neutral-500 mt-2 mb-4">
             <Category>{category}</Category> / {date}
