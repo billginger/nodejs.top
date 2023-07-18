@@ -12,4 +12,8 @@ const About = () => (
   </>
 )
 
+export const metadata = {
+  title: 'About Me - Nodejs.top',
+}
+
 export default About
