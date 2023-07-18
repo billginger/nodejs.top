@@ -11,8 +11,8 @@ const Blog = () => {
   return (
     <>
       <PageTitle>Blog List</PageTitle>
-      <div className="flex">
-        <div className="w-64">
+      <div className="flex flex-col md:flex-row">
+        <div className="w-64 pb-12">
           <div className="pb-4 font-[MarcellusSC]">Category</div>
           <NavCategory categories={categories} />
         </div>
@@ -22,7 +22,7 @@ const Blog = () => {
             <div className="py-3 flex justify-between border-t border-neutral-200" key={id}>
               <div>
                 <Category>{category}</Category>
-                <h2 className="inline-block relative top-px left-3 text-lg font-[MarcellusSC]">
+                <h2 className="inline pl-3 relative top-px text-lg font-[MarcellusSC]">
                   <Link className="hover:text-[--theme-color]" href={`/blog/${date}/${name}`}>{title}</Link>
                 </h2>
               </div>
