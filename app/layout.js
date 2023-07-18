@@ -5,13 +5,13 @@ const RootLayout = ({ children }) => (
   <html lang="zh-Hans">
     <body>
       <header className="bg-[--theme-color] text-white font-[MarcellusSC]">
-        <div className="container mx-auto flex justify-between px-8 pt-8 pb-24">
-          <div className="text-4xl">Nodejs.top</div>
+        <div className="container mx-auto flex justify-between pt-8 pb-24 px-4 flex-col sm:px-8 sm:flex-row">
+          <div className="text-center text-3xl pb-6 sm:text-4xl sm:pb-0">Nodejs.top</div>
           <Nav />
         </div>
       </header>
-      <main className="container mx-auto px-6 pb-12 -mt-16">
-        <div className="bg-white p-16 shadow-lg">
+      <main className="container mx-auto pb-12 -mt-16 px-0 sm:px-6">
+        <div className="bg-white shadow-lg px-4 py-8 sm:p-16">
           {children}
         </div>
       </main>
