@@ -2,6 +2,7 @@ import Link from 'next/link'
 import getPosts from '/lib/posts'
 import PageTitle from '../components/page-title'
 import NavCategory from '../components/nav-category'
+import CategoryActive from '../components/category-active'
 import Category from '../components/category'
 import Pagination from '../components/pagination'
 
@@ -17,7 +18,7 @@ const Blog = () => {
           <NavCategory categories={categories} />
         </div>
         <div className="grow">
-          <div className="pb-4 font-[MarcellusSC]">全部</div>
+          <CategoryActive />
           {posts.map(({ id, date, name, title, category }) => (
             <div className="py-3 flex justify-between border-t border-neutral-200" key={id}>
               <div>
